@@ -1,4 +1,4 @@
-services: serverless-cognito
+service: serverless-cognito
 
 provider:
   name: aws
@@ -15,6 +15,13 @@ provider:
       Resource: "*"
 
 functions:
+  app:
+    handler: app.server
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
   loginUser:
     handler: user/login.handler
     events:
@@ -64,13 +71,13 @@ functions:
           AutoVerifiedAttributes: ["email"]    
 
 
-     UserClient:
-       Type: AWS::Cognito::UserPoolClient
-       Properties:
-         ClientName: user-pool-ui
-         GenerateSecret: false
-         UserPoolId: {Ref: UserPool}
-         AccessTokenValidity: 5
-         IdTokenValidity: 5
-         ExplicitAuthFlows:
-           - "ADMIN_NO_SRP_AUTH"                                                   
+      UserClient:
+        Type: AWS::Cognito::UserPoolClient
+        Properties:
+          ClientName: user-pool-ui
+          GenerateSecret: false
+          UserPoolId: {Ref: UserPool}
+          AccessTokenValidity: 5
+          IdTokenValidity: 5
+          ExplicitAuthFlows:
+            - "ADMIN_NO_SRP_AUTH"                                                   

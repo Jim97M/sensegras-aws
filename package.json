@@ -1,0 +1,27 @@
+{
+  "name": "sensegras-aws",
+  "version": "1.0.0",
+  "description": "Serveless Authentication AWS",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jim97M/sensegras-aws.git"
+  },
+  "keywords": [
+    "SAAS"
+  ],
+  "author": "James Masika Wabuya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jim97M/sensegras-aws/issues"
+  },
+  "homepage": "https://github.com/Jim97M/sensegras-aws#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1158.0",
+    "express": "^4.18.1",
+    "serverless-http": "^3.0.1"
+  }
+}
