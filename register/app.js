@@ -2,8 +2,8 @@ const AWS = require('aws-sdk');
 const AmazonCognitoIdentity = require('amazon-cognito-identity-js');
 global.fetch = require('node-fetch');
 
-const UserPoolId = ""
-const ClientId = ""
+const UserPoolId = "us-east-1_8INQuHIiS"
+const ClientId = "3pe96do77c3ct68s4e1cIqusjc"
 
 const poolData = {
     UserPoolId,
@@ -11,28 +11,30 @@ const poolData = {
 }
 
 AWS.config.update({
-    region: 'eu-central-1'
+    region: 'us-east-1'
 })
 
 async function registerUser(json){
     const {
-      email,
+      telephoneNumber,
+      confirmationCode,
       password
     } = json
 
     return new Promise((resolve, reject) => {
         let attributeList = []
         attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute({
-            Name: "email",
-            Value: email
+            Name: "phone_number",
+            Value: telephoneNumber
         }));
+        
         attributeList.push(new AmazonCognitoIdentity.CognitoUserAttribute({
-            Name: "password",
-            Value: password
+            Name: "custom:confirmationCode",
+            Value: confirmationCode
         }));
 
         const userPool = new AmazonCognitoIdentity.CognitoAccessToken(poolData);
-        userPool.signUp(email, password, attributeList, null, function(err, result){
+        userPool.signUp(telephoneNumber, password, attributeList, null, function(err, result){
             if(err){
                 return resolve({
                     statusCode: 500,
@@ -49,7 +51,7 @@ async function registerUser(json){
 
 }
 
-exports.handler = async function (event, context, callback){
+exports.handler = async function(event, context, callback){
     const json = JSON.parse(event.body)
     const result = await registerUser(json)
 

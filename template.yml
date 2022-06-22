@@ -19,13 +19,13 @@ Resources:
      Properties:
        CodeUri: register/
        Handler: app.lambdaHandler
-       Runtime: nodejs14.x
+       Runtime: nodejs12.x
        Events:
          Cognito:
            Type: Api
            Properties:
              Path: /register
-             Method: get
+             Method: POST
  
 # service: serverless-cognito
 # provider:
