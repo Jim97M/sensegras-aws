@@ -19,7 +19,7 @@ const Login = () => {
                         </div>
                         <div className="input_text">
                            <input className="" type="text" placeholder="Enter Password" name="password" />
-                           <i className="fa-fa-eye"></i>
+                           <i className="fa fa-eye"></i>
                         </div>
                         <div className="btn"> 
                           <p>Forgot Password?</p>
@@ -30,9 +30,10 @@ const Login = () => {
                          <h5> LETS GET STARTED</h5> 
                        </div>
                     <form>
-                     <div className="input_text">
-                       <p>I agree with processing of my personal data with conformity with the Privacy Policy. When
+                     <div className="input_textt">
+                       <p id="agree">I agree with processing of my personal data with conformity with the Privacy Policy. When
                          Clicking on "Get Started". You also agree with the End User Licence Agreement</p>
+                         <input className="" type="text" placeholder="Enter Your Email Ids" name="password" />
                      </div>
                      <div className="btn"> 
                           <button type="submit">Sign Up</button>

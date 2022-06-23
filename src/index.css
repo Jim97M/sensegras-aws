@@ -106,6 +106,25 @@ h5{
     margin-top: 20px
 }
 
+.input_textt{
+    display: grid;
+    /* position: absolute; */
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 20px
+}
+
+.input_textt #agree{
+    font-size: 10px;
+}
+
+.input_textt input{
+    margin-top: 10px;
+}
+
+.signup-header{
+    margin-top: 10px;
+}
 input[type="text"] {
     height: 40px;
     width: 90%;
