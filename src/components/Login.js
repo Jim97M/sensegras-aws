@@ -7,9 +7,10 @@ const Login = () => {
       <div className="container">
         <div className="card">
             <div className="form">
-                <div className="leftside">
-                    <div className='sensehead' >
+                <div className="left-side">
+                    <div className="sensehead">
                        <h3>SENSEGRASS</h3>
+                       <h5>LOGIN TO SG ACCOUNT</h5>
                     </div>
                     <form>
                         <div className="input_text">
@@ -21,7 +22,20 @@ const Login = () => {
                            <i className="fa-fa-eye"></i>
                         </div>
                         <div className="btn"> 
+                          <p>Forgot Password?</p>
                           <button type="submit">Sign In</button>
+                        </div>
+                    </form>
+                    <div className="signup-header">
+                         <h5> LETS GET STARTED</h5> 
+                       </div>
+                    <form>
+                     <div className="input_text">
+                       <p>I agree with processing of my personal data with conformity with the Privacy Policy. When
+                         Clicking on "Get Started". You also agree with the End User Licence Agreement</p>
+                     </div>
+                     <div className="btn"> 
+                          <button type="submit">Sign Up</button>
                         </div>
                     </form>
                 </div>
