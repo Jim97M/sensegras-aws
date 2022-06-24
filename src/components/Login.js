@@ -1,8 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useNavigate} from "react-router-dom";
 import "../index.css";
+import UserPool from '../UserPool';
 import img from './sensegrass.png';
 
+
 const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+const onSubmit = (event) => {
+  event.preventDefault();
+
+  UserPool.signUp(email, password, [], null, (err, data) => {
+    if(err){
+      console.error(err);
+    }
+    console.log(data);
+  })
+}
   return (
       <div className="container">
         <div className="card">
@@ -12,18 +30,25 @@ const Login = () => {
                        <h3>SENSEGRASS</h3>
                        <h5>LOGIN TO SG ACCOUNT</h5>
                     </div>
-                    <form>
+                    <form onSubmit={onSubmit}>
                         <div className="input_text">
-                           <input className="" type="text" placeholder="Enter Email" name="email" />
+                           <input
+                             value={email}
+                             onChange={(event) => setEmail(event.target.value)}                             
+                             className="" type="text" placeholder="Enter Email" name="email" />
                            <p><i className="fa fa-warning">Please enter a valid email address</i></p>
                         </div>
                         <div className="input_text">
-                           <input className="" type="text" placeholder="Enter Password" name="password" />
+                           <input
+                            value={password} 
+                            onChange={(event) => setPassword(event.target.value)}
+                            className="" type="text" placeholder="Enter Password" name="password" />
                            <i className="fa fa-eye"></i>
                         </div>
                         <div className="btn"> 
                           <p>Forgot Password?</p>
-                          <button type="submit">Sign In</button>
+                          <button type="submit" onClick={() => navigate("/home")}
+                          >Sign In</button>
                         </div>
                     </form>
                     <div className="signup-header">
@@ -36,7 +61,8 @@ const Login = () => {
                          <input className="" type="text" placeholder="Enter Your Email Ids" name="password" />
                      </div>
                      <div className="btn"> 
-                          <button type="submit">Sign Up</button>
+                          <button type="submit"
+                          >Sign Up</button>
                         </div>
                     </form>
                 </div>
