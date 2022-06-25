@@ -30,9 +30,12 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
+    "@devexpress/dx-react-chart": "^3.0.3",
     "amazon-cognito-identity-js": "^5.2.9",
+    "chart.js": "^3.8.0",
     "path": "^0.12.7",
     "react": "^18.2.0",
+    "react-chartjs-2": "^4.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0"
   }
