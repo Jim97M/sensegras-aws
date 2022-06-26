@@ -2,24 +2,40 @@
 
  .background{
   background: radial-gradient( rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%); 
+  height: 58rem;
 } 
 
 .WeatherBoards{
   display: flex;
-  /* margin-top: 90px; */
+   margin-top: 0px;
+   overflow: hidden;
   justify-content: space-between;
   margin-left: 100px;
   
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
 }
 
 
 
 .WeatherLeft-board {
     width: 55rem;
+    border-radius: 10px;
+    height: 40rem;
+    margin-top: 90px;
     border: 1px solid #28a2a2;
-  box-shadow: 0.15rem 0.15rem 0.5rem rgba(0, 0, 0, 0.1);
   background-color: rgb(104, 228, 159);
   
+}
+
+.data-right > button{
+  border-radius: 10px;
+  padding: 10px 5px 10px 5px;
+  background-color: rgb(66, 141, 76);
+  border: none;
 }
 
 .vertical {
@@ -30,7 +46,6 @@
 
 .card-header{
   box-shadow: inset;
-  border: 1px solid black;
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -39,10 +54,10 @@
 }
 
 .WeatherRight-board {
-  border: 1px solid #28a2a2;
   background-color: rgb(97, 187, 247);
-  box-shadow: 0.15rem 0.15rem 0.5rem rgba(0, 0, 0, 0.1);
   padding: 2rem;
+  height: 40rem;
+  margin-top: 90px;
   margin-right: 90px;
   justify-content: center;
 
@@ -91,6 +106,25 @@
   margin: 0;
 }
 
+.end {
+  display: flex;
+  margin-right: 10px;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.end > button {
+  padding: 10px 5px 10px 5px;
+  background-color: rgb(66, 141, 76);
+  border: none;
+  border-radius: 5px;
+}
+
+.bottom-data{
+  display: flex;
+  justify-content: space-between;
+}
 /* .WeatherBoards .ui.positive.button {
   background-color: #28a2a2;
 } */
