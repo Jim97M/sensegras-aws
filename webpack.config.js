@@ -2,13 +2,6 @@ const path = require("path");
 const miniCssExtraPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// import path from "path";
-// import MiniCssExtractPlugin from "mini-css-extract-plugin";
-// import { fileURLToPath } from "url";
-
-// let __filename = fileURLToPath(import.meta.url);
-
-// let __dirname = path.dirname(__filename);
 
 module.exports = {
  
